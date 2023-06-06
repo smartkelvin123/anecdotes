@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+// import { useField } from "./hooks";
 import {
   BrowserRouter as Router,
   Routes,
@@ -103,6 +104,11 @@ const CreateNew = ({ addNew }) => {
     setShowNotification(true);
     // history.push("/");
   };
+  const handleClear = () => {
+    setContent("");
+    setAuthor("");
+    setInfo("");
+  };
 
   return (
     <div>
@@ -134,6 +140,9 @@ const CreateNew = ({ addNew }) => {
           />
         </div>
         <button type="submit">Create</button>
+        <button type="button" onClick={handleClear}>
+          Clear
+        </button>
       </form>
     </div>
   );
